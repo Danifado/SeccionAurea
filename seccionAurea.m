@@ -8,13 +8,17 @@ ak = -3;
 bk = 5;
 alph = 0.618;
 
-uk = ak + alph * (bk - ak)
-lk = ak + (1 - alph) * (bk - ak)
+
 l = 0,001;
  
 %paso 1
+
 while true
+uk = ak + alph * (bk - ak)
+lk = ak + (1 - alph) * (bk - ak)
+
 iter=iter+1;
+
 if(bk - ak) < l
     break
 else
