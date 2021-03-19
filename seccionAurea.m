@@ -9,20 +9,19 @@ bk = 5;
 alph = 0.618;
 
 
-l = 0,001;
+l = 0.2;
  
 %paso 1
-
 while true
-uk = ak + alph * (bk - ak)
-lk = ak + (1 - alph) * (bk - ak)
+
+uk = ak + alph * (bk - ak);
+lk = ak + (1 - alph) * (bk - ak);
 
 iter=iter+1;
-
 if(bk - ak) < l
     break
 else
-    if(lk^2 - 2*lk) > (uk^2 - 2*uk)
+    if(((lk)^2 - (2*(lk))) > ((uk)^2 - (2*uk)))
         %Paso 2 f(lk) > f (uk)
         ak= lk;
         bk= bk;
@@ -42,8 +41,8 @@ ak
 bk
 uk
 lk
-wait time (5 second);
-break
+%wait time (5 second);
+%break
 end
 
 
