@@ -1,5 +1,6 @@
 %Integrantes:
 %Cristian Reinales, Nicolas Botero, Daniel Zarate, Giancarlo Gonzalez
+%Miguel Caicedo
 %Implementacion de Seccion Aurea
 
 %paso 0
@@ -21,7 +22,7 @@ iter=iter+1;
 if(bk - ak) < l
     break
 else
-    if(((lk)^2 - (2*(lk))) > ((uk)^2 - (2*uk)))
+    if((2 * exp(-lk) + 2 * lk^2)) > ((2 * exp(-uk) + 2 * uk^2))
         %Paso 2 f(lk) > f (uk)
         ak= lk;
         bk= bk;
