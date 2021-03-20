@@ -32,8 +32,9 @@ xg = xg / (2 * ((a23 * f1) + (a31 * f2) + (a12 * f3)));
 
 %Paso 1
 while true
+disp("Paso 1")
 intervalo
-disp("==========================")
+
 f1 = f(intervalo(1));  % f(x1)
 f2 = f(intervalo(2));  % f(x2)
 f3 = f(intervalo(3));  % f(x3)
@@ -51,7 +52,7 @@ fxg = f(xg);    % f(x_gorro)
 iter = iter + 1;
 
 if abs(intervalo(3)- intervalo(1)) < l
-    disp("Oh cy")
+    disp("Fin del algoritmo :D")
     break
 else
     if xg > intervalo(2)
@@ -67,17 +68,14 @@ else
         disp("Paso 3")
         % Paso 3
         if fxg > f2
-            disp("SIUUUU")
             intervalo=[xg,intervalo(2),intervalo(3)];
 
         else
             intervalo = [intervalo(2),xg,intervalo(2)];
-            disp("Ñoo")
         end
      elseif xg == intervalo(2)
         disp("Paso 4")
         % Paso 4
-        disp("=============================")
         if intervalo(2) - intervalo(2) < intervalo(3) - intervalo(2)
             xg = intervalo(2) + (l / 2);
     
@@ -85,6 +83,7 @@ else
             xg = intervalo(2) - (l / 2);
         end
     else
+        disp("Error, por favor verifique los parámetros de la función o de las x.")
         break
     end
 end
@@ -94,7 +93,6 @@ disp(iter)
 disp("Los valores de las variables son: ")
 intervalo
 end
-
 function y = f(x)
     y = (2 * exp(-x)) + (2 * x^2);
 end
