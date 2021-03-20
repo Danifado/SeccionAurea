@@ -5,9 +5,9 @@
 
 %Paso 0
 iter = 0;
-x1 = -3;
-x2 = -1;
-x3 = 5;
+x1 = -4;
+x2 = 0;
+x3 = 2;
 intervalo = [x1,x2,x3];  % intervalo inicial
 
 
@@ -51,34 +51,37 @@ fxg = f(xg);    % f(x_gorro)
 iter = iter + 1;
 
 if abs(intervalo(3)- intervalo(1)) < l
+    disp("Oh cy")
     break
 else
     if xg > intervalo(2)
         disp("Paso 2")
         %Paso 2
         if fxg > f2
-            intervalo = [x1,x2,xg];
+            intervalo = [intervalo(2),intervalo(2),xg];
 
         else
-            intervalo = [x2,xg,x3];
+            intervalo = [intervalo(2),xg,intervalo(3)];
         end
      elseif xg < intervalo(2)
         disp("Paso 3")
         % Paso 3
         if fxg > f2
-            intervalo=[xg,x2,x3];
+            disp("SIUUUU")
+            intervalo=[xg,intervalo(2),intervalo(3)];
 
         else
-            intervalo = [x1,xg,x2];
+            intervalo = [intervalo(2),xg,intervalo(2)];
+            disp("Ñoo")
         end
      elseif xg == intervalo(2)
         disp("Paso 4")
         % Paso 4
         disp("=============================")
-        if x2 - x1 < x3 - x2
+        if intervalo(2) - intervalo(2) < intervalo(3) - intervalo(2)
             xg = intervalo(2) + (l / 2);
     
-        elseif x2 - x1 > x3 - x2
+        elseif intervalo(2) - intervalo(2) > intervalo(3) - intervalo(2)
             xg = intervalo(2) - (l / 2);
         end
     else
@@ -90,7 +93,6 @@ disp("Iteracion numero: ")
 disp(iter)
 disp("Los valores de las variables son: ")
 intervalo
-
 end
 
 function y = f(x)
