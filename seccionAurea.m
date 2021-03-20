@@ -22,7 +22,7 @@ iter=iter+1;
 if(bk - ak) < l
     break
 else
-    if((2 * exp(-lk) + 2 * lk^2)) > ((2 * exp(-uk) + 2 * uk^2))
+    if(f(lk) > f(uk))
         %Paso 2 f(lk) > f (uk)
         ak= lk;
         bk= bk;
@@ -47,4 +47,8 @@ lk
 end
 
 
+end
+
+function y = f(x)
+    y = (2 * exp(-x)) + (2 * x^2);
 end
